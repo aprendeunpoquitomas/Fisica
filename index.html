@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenidos a la Física</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #0073e6;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h2 {
+            color: #0073e6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #0073e6;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenidos a la Física</h1>
+        <nav>
+            <ul>
+                <li><a href="#conceptos">Conceptos Clave</a></li>
+                <li><a href="#experimentos">Experimentos</a></li>
+                <li><a href="#calculadora">Calculadora de Velocidad</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="conceptos">
+            <h2>Conceptos Clave</h2>
+            <p>La física es la ciencia que estudia las propiedades y el comportamiento de la materia y la energía. Algunos conceptos clave incluyen:</p>
+            <ul>
+                <li>Masa</li>
+                <li>Fuerza</li>
+                <li>Velocidad</li>
+                <li>Trabajo</li>
+                <li>Energía</li>
+            </ul>
+        </section>
+        <section id="experimentos">
+            <h2>Experimentos Famosos</h2>
+            <p>Existen muchos experimentos que han cambiado nuestra comprensión de la física, entre ellos:</p>
+            <ol>
+                <li>Experimento de doble rendija</li>
+                <li>Caída libre de Galileo</li>
+                <li>Experimento de Cavendish</li>
+            </ol>
+        </section>
+        <section id="calculadora">
+            <h2>Calculadora de Velocidad</h2>
+            <p>Introduce la distancia (en metros) y el tiempo (en segundos) para calcular la velocidad.</p>
+            <input type="number" id="distancia" placeholder="Distancia (m)">
+            <input type="number" id="tiempo" placeholder="Tiempo (s)">
+            <button onclick="calcularVelocidad()">Calcular Velocidad</button>
+            <p id="resultado"></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Física para Todos</p>
+    </footer>
+    <script>
+        function calcularVelocidad() {
+            const distancia = parseFloat(document.getElementById('distancia').value);
+            const tiempo = parseFloat(document.getElementById('tiempo').value);
+            let resultado;
+
+            if (tiempo > 0) {
+                const velocidad = distancia / tiempo;
+                resultado = `La velocidad es ${velocidad.toFixed(2)} m/s.`;
+            } else {
+                resultado = 'El tiempo debe ser mayor que cero.';
+            }
+
+            document.getElementById('resultado').textContent = resultado;
+        }
+    </script>
+</body>
+</html>
